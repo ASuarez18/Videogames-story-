@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-pixel: var(--font-pixel), monospace;
   --font-modern: var(--font-modern), sans-serif;
@@ -15,16 +14,14 @@
   /* ERA 02 — 1994 */
   --color-era2-bg: #1a0b2e;
   --color-era2-primary: #ff2e63;
-  --color-era2-secondary: #08d9d6
-  --color-era2-accent: #ffde59;
+  --color-era2-secondary: #08d9d6 --color-era2-accent: #ffde59;
   --color-era2-outline: #252a34;
   --color-era2-text: #f2f2f2;
 
   /* ERA 03 — 2001 */
   --color-era3-bg: #05060a;
   --color-era3-primary: #4d7cfe;
-  --color-era3-secondary: #7b2ff7
-  --color-era3-wire: #8fa3c4;
+  --color-era3-secondary: #7b2ff7 --color-era3-wire: #8fa3c4;
   --color-era3-surface: #12141c;
   --color-era3-text: #e4e8f1;
 
@@ -35,4 +32,49 @@
   --color-era4-cool: #00c6ff;
   --color-era4-surface: #1c1c1e;
   --color-era4-text: #ffffff;
+}
+
+@keyframes crt-noise {
+  0% {
+    opacity: 0.04;
+  }
+  10% {
+    opacity: 0.11;
+  }
+  18% {
+    opacity: 0.05;
+  }
+  27% {
+    opacity: 0.14;
+  }
+  35% {
+    opacity: 0.07;
+  }
+  46% {
+    opacity: 0.12;
+  }
+  53% {
+    opacity: 0.04;
+  }
+  67% {
+    opacity: 0.13;
+  }
+  74% {
+    opacity: 0.06;
+  }
+  86% {
+    opacity: 0.1;
+  }
+  93% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0.09;
+  }
+}
+
+.crt-noise {
+  background: rgba(120, 255, 120, 0.22);
+  mix-blend-mode: screen;
+  animation: crt-noise 0.22s steps(2, end) infinite;
 }
