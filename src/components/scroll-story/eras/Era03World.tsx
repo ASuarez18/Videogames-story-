@@ -177,14 +177,47 @@ function Sunset() {
   );
 }
 
-function RacingCamera() {
+const DRIVE_START = 0.63;
+const DRIVE_END = 0.73;
+const DRIVE_DISTANCE = 38;
+
+function driveDistance(progress: number) {
+  const t = THREE.MathUtils.clamp(
+    (progress - DRIVE_START) / (DRIVE_END - DRIVE_START),
+    0,
+    1,
+  );
+  // Smooth acceleration followed by a gradual slowdown.
+  const eased = t * t * (3 - 2 * t);
+  return DRIVE_DISTANCE * eased;
+}
+
+function RacingCamera({ scrollYProgress }: Era03WorldProps) {
   const { camera } = useThree();
 
-  camera.position.set(0, 2.8, 12);
-  camera.lookAt(0, 1.8, -55);
-  camera.updateProjectionMatrix();
+  useFrame(() => {
+    const distance = driveDistance(scrollYProgress.get());
+    camera.position.set(0, 2.8, 12 - distance);
+    camera.lookAt(0, 1.8, -55 - distance);
+  });
 
   return null;
+}
+
+function DrivingCar({ scrollYProgress }: Era03WorldProps) {
+  const rig = useRef<THREE.Group>(null);
+
+  useFrame(() => {
+    if (rig.current) {
+      rig.current.position.z = -driveDistance(scrollYProgress.get());
+    }
+  });
+
+  return (
+    <group ref={rig}>
+      <Era03Car />
+    </group>
+  );
 }
 
 interface Era03WorldProps {
@@ -243,24 +276,21 @@ function Materialization({ scrollYProgress }: Era03WorldProps) {
   }, []);
 
   useFrame(() => {
-    const phase = THREE.MathUtils.clamp(
-      (scrollYProgress.get() - 0.56) / 0.04,
+    const phase = Math.max(
       0,
-      1,
+      Math.min(1, (scrollYProgress.get() - 0.56) / 0.04),
     );
-
+    const solidOpacity = phase;
     /* eslint-disable react-hooks/immutability */
+
     for (const { solid, wire } of entries.current) {
       const transparent = phase < 1;
-
       if (solid.transparent !== transparent) {
         solid.transparent = transparent;
         solid.needsUpdate = true;
       }
-
-      solid.opacity = phase;
+      solid.opacity = solidOpacity;
       solid.depthWrite = phase >= 1;
-
       wire.opacity = 1 - phase;
       wire.visible = phase < 1;
     }
@@ -269,12 +299,12 @@ function Materialization({ scrollYProgress }: Era03WorldProps) {
 
   return (
     <group ref={group}>
-      <RacingEnvironment />
+      <RacingEnvironment scrollYProgress={scrollYProgress} />
     </group>
   );
 }
 
-function RacingEnvironment() {
+function RacingEnvironment({ scrollYProgress }: Era03WorldProps) {
   return (
     <>
       <color attach="background" args={["#75627e"]} />
@@ -296,7 +326,7 @@ function RacingEnvironment() {
       <Buildings />
       <Streetlights />
       <Sunset />
-      <Era03Car />
+      <DrivingCar scrollYProgress={scrollYProgress} />
     </>
   );
 }
@@ -321,7 +351,7 @@ export default function Era03World({ scrollYProgress }: Era03WorldProps) {
         height: "100%",
       }}
     >
-      <RacingCamera />
+      <RacingCamera scrollYProgress={scrollYProgress} />
       <Materialization scrollYProgress={scrollYProgress} />
     </Canvas>
   );
