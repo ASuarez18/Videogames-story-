@@ -12,12 +12,21 @@ const pixelFont = Press_Start_2P({
 const modernFont = Inter({
   subsets: ["latin"],
   variable: "--font-modern",
-  display: "swap"
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Gaming evolution",
+  title: "Gaming Evolution",
   description: "A scroll into the history of video games",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
