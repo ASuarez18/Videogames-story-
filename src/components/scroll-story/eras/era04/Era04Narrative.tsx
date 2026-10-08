@@ -34,7 +34,7 @@ export default function Era04Narrative({
         className="absolute inset-x-6 top-[3%] mx-auto max-w-3xl text-center sm:top-[5%]"
       >
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-[#5de5e7] sm:text-xs">
-          2026 / 04 — The Immersive Era
+          2016 — The Immersive Era
         </p>
         <h2 className="text-3xl font-light leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           Beyond{" "}

@@ -161,7 +161,7 @@ export default function Era01Pixel({ scrollYProgress }: EraProps) {
         className="relative z-20 px-5 lg:px-0 flex flex-col items-center text-center"
       >
         <span className="font-pixel text-xs text-era1-dim sm:text-sm">
-          1985
+          1983
         </span>
 
         <h2 className="font-pixel mt-3 text-lg text-era1-primary sm:text-2xl">

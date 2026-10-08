@@ -270,7 +270,7 @@ export default function Era02Bit({ scrollYProgress }: EraProps) {
           }}
           className="mb-1 font-pixel text-sm tracking-[0.3em] sm:text-base"
         >
-          1994
+          1988
         </motion.span>
 
         <div className="flex flex-col items-center text-center">

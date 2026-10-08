@@ -51,7 +51,7 @@ export default function Era03Polygons({ scrollYProgress }: Era03PolygonsProps) {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5a18e]" />
               <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#e5a18e] sm:text-xs">
-                2001 / 03
+                1996
               </span>
             </div>
 
@@ -74,7 +74,7 @@ export default function Era03Polygons({ scrollYProgress }: Era03PolygonsProps) {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-8 bg-[#e5a18e]" />
               <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#e5a18e] sm:text-xs">
-                2001 / 03
+                1996
               </span>
             </div>
             <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-[#f0dfd2]/80 sm:text-xs">

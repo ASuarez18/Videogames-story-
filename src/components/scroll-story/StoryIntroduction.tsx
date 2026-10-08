@@ -62,7 +62,7 @@ export default function StoryIntroduction() {
           </span>
 
           <span className="text-[10px] tracking-[0.15em] text-neutral-500">
-            1985 — TODAY
+            1983 — TODAY
           </span>
         </header>
 
