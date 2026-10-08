@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import type { MotionValue } from "motion/react";
 import * as THREE from "three";
-import Era03Car from "./Era03Car";
+import Era03Car from "@/components/scroll-story/eras/era03/Era03Car";
 
 const ROAD_WIDTH = 10;
 const ROAD_LENGTH = 180;

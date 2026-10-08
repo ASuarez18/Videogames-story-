@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useTransform, type MotionValue } from "motion/react";
-import Era03World from "./Era03World";
+import Era03World from "@/components/scroll-story/eras/era03/Era03World";
 import { ERA_RANGES } from "@/lib/scroll-config";
 
 interface Era03PolygonsProps {

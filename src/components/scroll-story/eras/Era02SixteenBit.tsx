@@ -4,7 +4,7 @@
 import { motion, useTransform, type MotionValue } from "motion/react";
 import type { EraProps } from "./types";
 import { ERA_RANGES } from "@/lib/scroll-config";
-import Era02Landscape from "./Era02Landscape";
+import Era02Landscape from "@/components/scroll-story/eras/era02/Era02Landscape";
 
 /**
  * 0  = transparent
