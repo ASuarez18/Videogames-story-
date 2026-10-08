@@ -158,7 +158,7 @@ export default function Era01Pixel({ scrollYProgress }: EraProps) {
       {/* Era narrative */}
       <motion.div
         style={{ opacity: textOpacity, y: textY }}
-        className="relative z-20 flex flex-col items-center text-center"
+        className="relative z-20 px-5 lg:px-0 flex flex-col items-center text-center"
       >
         <span className="font-pixel text-xs text-era1-dim sm:text-sm">
           1985
