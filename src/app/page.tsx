@@ -3,6 +3,7 @@
 import ScrollStoryContainer from "@/components/scroll-story/ScrollStoryContainer";
 import Era01Pixel from "@/components/scroll-story/eras/Era01Pixel";
 import Era02Bit from "@/components/scroll-story/eras/Era02SixteenBit";
+import Era03Polygons from "@/components/scroll-story/eras/Era03Polygons";
 import { ERAS, ERA_RANGES, type EraKey } from "@/lib/scroll-config";
 import { motion, useTransform, type MotionValue } from "motion/react";
 
@@ -61,8 +62,7 @@ export default function Home() {
           <>
             <Era01Pixel scrollYProgress={scrollYProgress} />
             <Era02Bit scrollYProgress={scrollYProgress} />
-
-            <EraPlaceholder index={2} scrollYProgress={scrollYProgress} />
+            <Era03Polygons scrollYProgress={scrollYProgress} />
 
             <EraPlaceholder index={3} scrollYProgress={scrollYProgress} />
           </>
