@@ -289,7 +289,7 @@ export default function Era02Bit({ scrollYProgress }: EraProps) {
               opacity: descriptionOpacity,
               y: descriptionY,
             }}
-            className="mt-5 max-w-sm font-pixel text-[10px] leading-relaxed text-era2-text sm:text-xs"
+            className="mt-5 max-w-sm px-5 lg:px-0 font-pixel text-[10px] leading-relaxed text-era2-text sm:text-xs"
           >
             Color changed everything. Worlds grew richer, characters became
             expressive, and pixels started telling bigger stories.

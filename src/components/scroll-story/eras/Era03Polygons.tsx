@@ -13,10 +13,10 @@ export default function Era03Polygons({ scrollYProgress }: Era03PolygonsProps) {
   const span = end - start;
 
   const opacity = useTransform(
-    scrollYProgress,
-    [start, start + span * 0.15, end - span * 0.15, end],
-    [0, 1, 1, 0],
-  );
+  scrollYProgress,
+  [start, start + span * 0.15, end, end + 0.035],
+  [0, 1, 1, 0],
+);
 
   const titleOpacity = useTransform(
     scrollYProgress,
