@@ -4,6 +4,9 @@ Build a one-page website that tells a story as the reader scrolls. Every animati
 
 This is an individual assignment. The scope is small on purpose: one page, deployed, done well.
 
+## Link to web page
+[Videogame Story](https://videogames-story.vercel.app/)
+
 ## Pick a story
 
 Anything you can tell in one page. Some ideas:
